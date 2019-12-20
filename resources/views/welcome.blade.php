@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Online-Diary
+                    the-notebook
                 </div>
 
                 <div class="links">
