@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Online-Diary
+                    Salam
                 </div>
 
                 <div class="links">
