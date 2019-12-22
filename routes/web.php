@@ -18,3 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/profile/{user}', 'ProfilesController@show')->name('profile.show');
+Route::get('/n/create' , 'NotesController@create');
+Route::post('/n' , 'NotesController@store');
