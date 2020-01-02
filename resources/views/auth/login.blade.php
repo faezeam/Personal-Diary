@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+label {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+}​
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -11,7 +18,7 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="form-group row">
+                        <div class="form-group row ">
                             <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('نام کاربری') }}</label>
 
                             <div class="col-md-6">

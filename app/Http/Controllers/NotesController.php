@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use \App\User;
+use \App\Note;
 use Illuminate\Http\Request;
 
 class NotesController extends Controller
@@ -15,7 +16,28 @@ class NotesController extends Controller
     {
         return view ('notes.create');
     }
+    public function update(User $user)
+    {
+        $this->authorize('update',$user->notes);
 
+        $data=requst()->validate([
+            'title'=>'required',
+            'body'=>'required',
+        ]
+        );
+        auth()->user()->notes()->update([
+            'title' =>$data['title'],
+            'body' => $data['body'],
+        ]);
+        return redirect('/profile/{{$user->id}}');
+
+    }
+    public function edit(Note $note , User $user)
+    {
+        dd($user,$note);
+        $this->authorize('update',$note);
+        return view ('notes.edit' , compact('note'));
+    }
     public function store()
     {
 
@@ -24,21 +46,13 @@ class NotesController extends Controller
             'body' =>  'required' ,
         ]);
 
-        // $bodyPath = request('body')->store('uploads' , 'public');
-        // auth()->user()->notes()->create([
-        //     'title' =>$data['title'],
-        //     'body' => $data['body'],
-        // ]);
+         auth()->user()->notes()->create([
+             'title' =>$data['title'],
+             'body' => $data['body'],
+         ]);
 
-        //     return redirect('/notes/' . auth()->user()->id);
+             return redirect('/profile/' . auth()->user()->id);
 
-        $note =new\App\Note();
-        $note->$title = $data('title');
-        $note->$body = $data('body');
-        $note->$user_id = auth()->user()->id;       
-        $note->save();
-
-        return redirect('/notes')->with('success', 'Note Created');
 
       
         
