@@ -12,24 +12,21 @@ class NotesController extends Controller
             $this->middleware('auth');
     }
 
-    public function create(Note $not)
+    public function create()
     {
         return view ('notes.create');
     }
-    public function update(User $user)
+    public function update(Note $note)
     {
      
 
-        $data=requst()->validate([
+        $data=request()->validate([
             'title'=>'required',
             'body'=>'required',
         ]
         );
-        auth()->user()->notes()->update([
-            'title' =>$data['title'],
-            'body' => $data['body'],
-        ]);
-        return redirect('/profile/{{$user->id}}');
+        auth()->user()->notes()->update($data);
+        return redirect('/profile/' . auth()->user()->id);
 
     }
     public function edit(Note $note)
@@ -71,7 +68,7 @@ class NotesController extends Controller
 
        $note = Note::findOrFail($note);
         $note->delete();
-       return redirect('/profile/{{$user->id}}');
+       return redirect('/profile/' . auth()->user()->id);
 
       
        

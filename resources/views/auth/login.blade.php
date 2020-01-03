@@ -2,11 +2,7 @@
 
 @section('content')
 <style>
-label {
-  display: inline-block;
-  width: 140px;
-  text-align: right;
-}​
+
 </style>
 <div class="container">
 <div class="row">
@@ -27,7 +23,7 @@ label {
                             
                             <div class="col-3"></div>
                             <div class="col-md-4">
-                                <input id="username" style="text-align:right; width:300px;" type="text" placeholder="نام کاربری" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+                                <input id="username" style="font-family: BYekan;text-align:right; width:300px;" type="text" placeholder="نام کاربری" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
 
                                 @error('username')
                                     <span class="invalid-feedback" role="alert">
@@ -42,7 +38,7 @@ label {
                         <div class="col-3"></div>
 
                             <div class="col-md-4">
-                                <input id="password" style="text-align:right; width:300px;" placeholder="کلمه عبور" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" style="font-family: BYekan;text-align:right; width:300px;" placeholder="کلمه عبور" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
