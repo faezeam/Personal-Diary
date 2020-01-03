@@ -71,7 +71,10 @@ class NotesController extends Controller
 
        $note = Note::findOrFail($note);
         $note->delete();
-        return redirect('/profile/{{$user->id}}');
+       return redirect('/profile/{{$user->id}}');
+
+      
+       
          
       
     }

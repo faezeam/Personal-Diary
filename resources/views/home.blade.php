@@ -38,12 +38,21 @@ font-family:BYekan;
         <div class="pl-5 ml-5"><p >{{ $note->title }}</p> </div></div>
         <div class="d-flex " style=" font-family: BYekan;">
 
+<<<<<<< HEAD
+                    <div class="col-4" >
+                    <a class="btn btn-primary w-100 " href="{{ route('note.destroy', $note->id) }}" >حذف </a>
+                    
+                    </div>
+                    <div class="col-4" ><a class="btn btn-primary  w-100" href="/p/{{ $note->id }}/edit"> ویرایش</a> </div>
+                    <div class="col-4" ><a class="btn btn-primary  w-100" href="/p/{{ $note->id }}">نمایش</a> </div>
+=======
 
 
                     <div class="col-4" ><a class="btn btn-primary w-100 " style="background-color:#159B9F; " href="" >حذف </a></div>
 
                     <div class="col-4" ><a class="btn btn-primary  w-100" style="background-color:#159B9F; "href="/p/{{ $note->id }}/edit"> ویرایش</a> </div>
                     <div class="col-4" ><a class="btn btn-primary  w-100"style="background-color:#159B9F; " href="/p/{{ $note->id }}">نمایش</a> </div>
+>>>>>>> 5b8b326225b05520014899ad73dbe49d7c48d331
                 </div>          
         </div>
         @endforeach
