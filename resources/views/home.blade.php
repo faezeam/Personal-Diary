@@ -4,7 +4,7 @@
 @section('content')
 
 <style >
-
+font-family:BYekan;
 </style>
 
 <div class="container">
@@ -32,12 +32,12 @@
 
     <div class="row">
         @foreach ($user->notes as $note)
-        <div class="col-5 m-4 border border-info">
+        <div class="col-5 m-4 border border-info" style=" font-family: BYekan;">
         
         <p>{{ $note->title }}</p> 
         <div class="d-flex " style=" font-family: BYekan;">
 
-                    <div class="col-4" ><a class="btn btn-primary w-100 " >حذف</a> </div>
+                    <div class="col-4" ><a class="btn btn-primary w-100 "  href="/p/{{ $note->id }}">حذف</a> </div>
                     <div class="col-4" ><a class="btn btn-primary  w-100" href="/p/{{ $note->id }}/edit"> ویرایش</a> </div>
                     <div class="col-4" ><a class="btn btn-primary  w-100" href="/p/{{ $note->id }}">نمایش</a> </div>
                 </div>          

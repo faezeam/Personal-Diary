@@ -1,5 +1,20 @@
 <!DOCTYPE html>
+<style>
+@font-face {
+    font-family:'BYekan';
+    src:url('BYekan.eot');
+    src:local('bYekan'),
+        local('b Yekan'),
+        url('BYekan.eot?#iefix') format('embedded-opentype'),
+        url('BYekan.woff') format('woff'),
+        url('BYekan.ttf') format('truetype'),
+        url('BYekan.svg#BYekan') format('svg');
+    font-style:normal;
+    font-weight:normal;
+}
 
+
+</style>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">

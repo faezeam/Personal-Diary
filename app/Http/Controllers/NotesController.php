@@ -18,7 +18,7 @@ class NotesController extends Controller
     }
     public function update(User $user)
     {
-        $this->authorize('update',$user->notes);
+       // $this->authorize('update',$user->notes);
 
         $data=requst()->validate([
             'title'=>'required',
@@ -34,8 +34,8 @@ class NotesController extends Controller
     }
     public function edit(Note $note , User $user)
     {
-        dd($user,$note);
-        $this->authorize('update',$note);
+        
+      //  $this->authorize('update',$note);
         return view ('notes.edit' , compact('note'));
     }
     public function store()
@@ -57,7 +57,9 @@ class NotesController extends Controller
       
         
     }
-    public function show( \App\Note $note) {
+    public function show( Note $note) {
         return view('notes.show', compact('note'));
     }
+
+    
 }
