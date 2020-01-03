@@ -25,7 +25,7 @@ class NotesController extends Controller
             'body'=>'required',
         ]
         );
-        auth()->user()->notes()->update($data);
+       $note->update($data);
         return redirect('/profile/' . auth()->user()->id);
 
     }
@@ -66,8 +66,8 @@ class NotesController extends Controller
     public function destroy(Note $note)
   {
 
-       $note = Note::findOrFail($note);
-        $note->delete();
+       
+        $note->delete($note);
        return redirect('/profile/' . auth()->user()->id);
 
       

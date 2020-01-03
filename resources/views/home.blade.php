@@ -39,7 +39,7 @@ font-family:BYekan;
         <div class="d-flex " style=" font-family: BYekan;">
 
 
-                     <form  action="/profile/{{$note -> user_id}}" method="post">
+                    <form  action="/p/ {{$note->id}}" method="post">
                     @csrf
                     @method('delete')
                     <div class="" ><button class="btn btn-primary w-100 " style="background-color:#159B9F; " >حذف </button></div>
