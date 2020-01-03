@@ -32,10 +32,12 @@ class NotesController extends Controller
         return redirect('/profile/{{$user->id}}');
 
     }
-    public function edit(Note $note , User $user)
+    public function edit(Note $note)
     {
-        dd($user,$note);
-        $this->authorize('update',$note);
+       if ($note->user_id != auth()->user()->id){
+            $this->authorize('update', $note->user_id);
+       }
+        
         return view ('notes.edit' , compact('note'));
     }
     public function store()
@@ -59,5 +61,17 @@ class NotesController extends Controller
     }
     public function show( \App\Note $note) {
         return view('notes.show', compact('note'));
+    }
+
+
+
+    public function destroy(Note $note)
+  {
+       // $this->authorize('delete', $note);
+       $note = Note::findOrFail($note);
+        $note->delete();
+        return redirect('/profile/{{$user->id}}');
+         
+      
     }
 }

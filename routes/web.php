@@ -21,5 +21,7 @@ Route::get('/profile/{user}', 'ProfilesController@show')->name('profile.show');
 Route::get('/p/create' , 'NotesController@create');
 Route::get('/p/{note}' , 'NotesController@show');
 Route::get('/p/{note}/edit' , 'NotesController@edit')->name('note.edit');
-Route::patch('/p/{note}/edit' , 'NotesController@update')->name('note.update');
+Route::patch('/p/{note}' , 'NotesController@update')->name('note.update');
 Route::post('/p' , 'NotesController@store');
+Route::delete('/p/{note}' , 'NotesController@destroy')->name('note.destroy');
+//Route::delete('delete/{note}',array('uses' => 'NotesController@destroy', 'as' => 'My.route'));

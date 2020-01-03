@@ -2,7 +2,7 @@
 
 @section ('content')
 <div class="container">
-    <form action="/profile/{{$note -> id}}" enctype="multipart/form-data" method="post">
+    <form action="/profile/{{$note ->user_id}}" enctype="multipart/form-data" method="post">
         @csrf
         @method('PATCH')
         <div class="row"> 
