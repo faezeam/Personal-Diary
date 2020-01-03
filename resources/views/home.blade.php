@@ -10,7 +10,7 @@ font-family:BYekan;
 <div class="container">
     <div class="row">
     <div class="col-12 p-5 d-flex justify-content-center " >
-    <img src="/back.jpg">
+    <img src="/back.jpg" style="width:300px;">
     </div>
     </div>
 
@@ -33,13 +33,17 @@ font-family:BYekan;
     <div class="row">
         @foreach ($user->notes as $note)
         <div class="col-5 m-4 border border-info" style=" font-family: BYekan;">
-        
-        <p>{{ $note->title }}</p> 
+        <div class=" d-flex">
+        <div class="pr-5 mr-5"><p>{{ $note->created_at }}</p></div>
+        <div class="pl-5 ml-5"><p >{{ $note->title }}</p> </div></div>
         <div class="d-flex " style=" font-family: BYekan;">
 
-                    <div class="col-4" ><a class="btn btn-primary w-100 "  href="/p/{{ $note->id }}">حذف</a> </div>
-                    <div class="col-4" ><a class="btn btn-primary  w-100" href="/p/{{ $note->id }}/edit"> ویرایش</a> </div>
-                    <div class="col-4" ><a class="btn btn-primary  w-100" href="/p/{{ $note->id }}">نمایش</a> </div>
+
+
+                    <div class="col-4" ><a class="btn btn-primary w-100 " style="background-color:#159B9F; " href="" >حذف </a></div>
+
+                    <div class="col-4" ><a class="btn btn-primary  w-100" style="background-color:#159B9F; "href="/p/{{ $note->id }}/edit"> ویرایش</a> </div>
+                    <div class="col-4" ><a class="btn btn-primary  w-100"style="background-color:#159B9F; " href="/p/{{ $note->id }}">نمایش</a> </div>
                 </div>          
         </div>
         @endforeach

@@ -12,13 +12,13 @@ class NotesController extends Controller
             $this->middleware('auth');
     }
 
-    public function create()
+    public function create(Note $not)
     {
         return view ('notes.create');
     }
     public function update(User $user)
     {
-       // $this->authorize('update',$user->notes);
+     
 
         $data=requst()->validate([
             'title'=>'required',
@@ -32,10 +32,12 @@ class NotesController extends Controller
         return redirect('/profile/{{$user->id}}');
 
     }
-    public function edit(Note $note , User $user)
+    public function edit(Note $note)
     {
+       if ($note->user_id != auth()->user()->id){
+            $this->authorize('update', $note->user_id);
+       }
         
-      //  $this->authorize('update',$note);
         return view ('notes.edit' , compact('note'));
     }
     public function store()
@@ -61,5 +63,17 @@ class NotesController extends Controller
         return view('notes.show', compact('note'));
     }
 
-    
+
+
+
+    public function destroy(Note $note)
+  {
+
+       $note = Note::findOrFail($note);
+        $note->delete();
+        return redirect('/profile/{{$user->id}}');
+         
+      
+    }
+
 }

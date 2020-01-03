@@ -54,7 +54,7 @@ class NotesPolicy
     public function update(User $user, Note $note)
     {
         
-        return $user->id == $note->user_id ;
+        return $user->id = $note->user_id;
     }
 
     /**
@@ -66,7 +66,7 @@ class NotesPolicy
      */
     public function delete(User $user, Note $note)
     {
-        //
+        return $user->id == $note->user_id;
     }
 
     /**
