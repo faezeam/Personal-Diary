@@ -12,13 +12,13 @@ class NotesController extends Controller
             $this->middleware('auth');
     }
 
-    public function create()
+    public function create(Note $not)
     {
         return view ('notes.create');
     }
     public function update(User $user)
     {
-        $this->authorize('update',$user->notes);
+     
 
         $data=requst()->validate([
             'title'=>'required',
@@ -59,15 +59,16 @@ class NotesController extends Controller
       
         
     }
-    public function show( \App\Note $note) {
+    public function show( Note $note) {
         return view('notes.show', compact('note'));
     }
 
 
 
+
     public function destroy(Note $note)
   {
-       // $this->authorize('delete', $note);
+
        $note = Note::findOrFail($note);
         $note->delete();
        return redirect('/profile/{{$user->id}}');
@@ -77,4 +78,5 @@ class NotesController extends Controller
          
       
     }
+
 }

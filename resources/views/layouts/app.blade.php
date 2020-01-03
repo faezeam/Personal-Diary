@@ -1,4 +1,20 @@
 <!DOCTYPE html>
+<style>
+@font-face {
+    font-family:'BYekan';
+    src:url('BYekan.eot');
+    src:local('bYekan'),
+        local('b Yekan'),
+        url('BYekan.eot?#iefix') format('embedded-opentype'),
+        url('BYekan.woff') format('woff'),
+        url('BYekan.ttf') format('truetype'),
+        url('BYekan.svg#BYekan') format('svg');
+    font-style:normal;
+    font-weight:normal;
+}
+
+
+</style>
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -8,7 +24,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('دفترچه خاطرات آنلاین', 'دفترچه خاطرات آنلاین') }}</title>
+    <title >{{ config('دفترچه خاطرات آنلاین', 'دفترچه خاطرات آنلاین') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -24,7 +40,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" style=" font-family: BYekan;"href="{{ url('/') }}">
                     {{ config('دفترچه خاطرات آنلاین', 'دفترچه خاطرات آنلاین') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
