@@ -5,6 +5,7 @@
 
 <style >
 font-family:BYekan;
+
 </style>
 
 <div class="container">
@@ -36,7 +37,7 @@ font-family:BYekan;
         @foreach ($user->notes as $note)
         <div class="col-5 m-4 border border-info" style=" font-family: BYekan;">
         <div class=" d-flex">
-        <div class="pr-5 mr-5"><p>{{ $note->created_at }}</p></div>
+        <div class="pr-5 mr-5"><p>{{\Morilog\Jalali\Jalalian::forge($note->created_at)->format('%B %d %Y')}}</p></div>
         <div class="pl-5 ml-5"><p >{{ $note->title }}</p> </div></div>
         <div class="d-flex " style=" font-family: BYekan;">
 
@@ -52,6 +53,8 @@ font-family:BYekan;
                 </div>          
         </div>
         @endforeach
+        
+
     </div>
 </div>
 @endsection
