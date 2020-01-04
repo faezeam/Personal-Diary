@@ -28,11 +28,18 @@ class RegisterController extends Controller
      *
      * @var string
      */
+<<<<<<< HEAD
     protected $redirectTo = '/home';
    // public function registered( $user) 
     //{
        // return redirect ('/User::login()');
     //}
+=======
+
+    
+        protected $redirectpath='/login';
+    
+>>>>>>> a4075c13cde5c667a81d372011ce08456e515b40
 
     /**
      * Create a new controller instance.
@@ -68,11 +75,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'username' => $data['username'],
             'password' => Hash::make($data['password']),
         ]);
+
     }
 }
