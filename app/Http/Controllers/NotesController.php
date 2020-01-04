@@ -14,6 +14,8 @@ class NotesController extends Controller
 
     public function create()
     {
+ 
+     
         return view ('notes.create');
     }
     public function update(Note $note)

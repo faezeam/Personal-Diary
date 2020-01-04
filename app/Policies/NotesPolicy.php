@@ -41,7 +41,7 @@ class NotesPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->id == auth()->user()->id;
     }
 
     /**
@@ -54,7 +54,7 @@ class NotesPolicy
     public function update(User $user, Note $note)
     {
         
-        return $user->id = $note->user_id;
+        return $user->id == $note->user_id;
     }
 
     /**
