@@ -24,5 +24,8 @@
     <div class="col-4"></div>
     <div class="col-4  pt-5"><a class="btn btn-primary w-100 " style="background-color:#159B9F; font-family: BYekan;" href="/profile/{{$note -> user_id}}">بازگشت</a> </div>
 </div>
+@can('update' , $note)
+            <a href="/p/{{ $note }}/edit">ویرایش </a>
+        @endcan
 </div>
 @endsection
